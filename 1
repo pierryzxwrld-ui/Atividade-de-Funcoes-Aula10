@@ -1,0 +1,29 @@
+#1) Faça um programa que permita ao usuário verificar se uma senha a ser cadastrada em um sistema é válida ou não. O sistema em questão tem os seguintes critérios para validar uma senha:  Deve ter 6 caracteres (nem mais nem menos);  Deve ter letras e números;  Não deve constar as palavras ‘FLA’, ‘MENGO’ ou ‘MENGAO’  Não deve começar com a letra ‘A’ nem terminar com a letra ‘F’
+senha = input("Digite uma senha: ")
+
+temLetra = False
+temNumero = False
+
+if len(senha) != 6:
+    print("Senha inválida! Deve ter exatamente 6 caracteres.")
+
+elif "FLA" in senha or "MENGO" in senha or "MENGAO" in senha:
+    print("Senha inválida! Contém uma palavra proibida.")
+
+elif senha[0] == "A":
+    print("Senha inválida! Não pode começar com a letra A.")
+
+elif senha[5] == "F":
+    print("Senha inválida! Não pode terminar com a letra F.")
+
+else:
+    for caractere in senha:
+        if caractere.isalpha():
+            temLetra = True
+        if caractere.isdigit():
+            temNumero = True
+
+    if temLetra and temNumero:
+        print("Senha válida!")
+    else:
+        print("Senha inválida! Deve conter letras e números.")
