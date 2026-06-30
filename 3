@@ -1,0 +1,16 @@
+#3) Faça um programa que lê 3 notas de um aluno no semestre, calcula sua média a partir de uma função e informa se o aluno está aprovado (media >= 7) ou reprovado (media < 7).
+def calcular_media(n1, n2, n3):
+    return (n1 + n2 + n3) / 3
+
+nota1 = float(input())
+nota2 = float(input())
+nota3 = float(input())
+
+media_final = calcular_media(nota1, nota2, nota3)
+
+print(f"Média: {media_final:.2f}")
+
+if media_final >= 7:
+    print("APROVADO")
+else:
+    print("REPROVADO")
